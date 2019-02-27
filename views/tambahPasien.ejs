@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+  <title>Daftar Pasien</title>
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+
+      <% include partials/navigation %>
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Formulir</h3>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Pasien</h2>
+                  <div class="clearfix"></div>
+                </div>
+
+                <!-- FORM -->
+                <div class="x_content">
+                  <br />
+
+                  <form id="formulir" data-parsley-validate class="form-horizontal form-label-left">
+                    <!-- NIM -->
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nim">NIM <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="number" id="nim" required="required" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+                    <!-- /NIM -->
+                    <!-- fakultas -->
+                    <div class="form-group">
+                      <label class="col-md-3 col-sm-3 col-xs-12 control-label">Fakultas
+                      </label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" checked name="fakultas" value="1"> Sains dan
+                            Teknologi
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" name="fakultas" value="2"> Tarbiyah dan Ilmu Keguruan
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" name="fakultas" value="3"> Syari'ah
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" name="fakultas" value="4"> Humaniora
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" name="fakultas" value="5"> Psikologi
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" name="fakultas" value="6"> Ekonomi
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /fakultas -->
+
+                    <!-- nama -->
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Lengkap <span
+                          class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="nama" required="required" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+                    <!-- /nama -->
+                    <!-- tanggal DATEPICKER -->
+                    <!-- <div class="form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="single_cal1">Tanggal Lahir * <span
+                            class="required"></span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                          <input type="text" id="single_cal1" name="single_cal1" required="required" class="form-control has-feedback-left col-md-7 col-xs-12">
+                        </div>
+                      </div> -->
+                    <!-- /tanggal -->
+
+
+                    <!-- tanggal date mask -->
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date-mask">Tanggal Lahir <span
+                          class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="tgl_lahir" name="date-mask" data-inputmask="'mask': '99/99/9999'"
+                          required="required" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+                    <!-- /tanggal date mask -->
+
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nomor">No. Telepon <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="nomor_tel" name="nomor" required="required" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+
+                    <!-- gender -->
+                    <div class="form-group">
+                      <label class="col-md-3 col-sm-3 col-xs-12 control-label">Jenis Kelamin
+                      </label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" value="L" checked name="gender"> Laki-laki
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" class="flat" value="P" name="gender"> Perempuan
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /gender -->
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <button class="btn btn-primary" type="reset">Reset</button>
+                        <button type="submit" id="btn_submit" class="btn btn-success">Submit</button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+                <!-- /FORM -->
+                
+              </div>
+            </div>
+
+            <!-- TABEL -->
+            <div class="x_content">
+              <div class="table-responsive hidden">
+                <table class="table table-striped jambo_table bulk_action">
+                  <thead>
+                    <tr class="headings">
+                      <th>
+                        <input type="checkbox" id="check-all" class="flat">
+                      </th>
+                      <th class="column-title">NIM </th>
+                      <th class="column-title">Fakultas </th>
+                      <th class="column-title">Nama Lengkap </th>
+                      <th class="column-title">Tanggal Lahir </th>
+                      <th class="column-title">Nomor Telepon </th>
+                      <th class="column-title">Jenis Kelamin</th>
+                      <th class="column-title no-link last"><span class="nobr">Opsi</span>
+                      </th>
+                      <th class="bulk-actions" colspan="7">
+                        <a class="antoo" style="color:#fff; font-weight:500;"> ( <span class="action-cnt">
+                          </span> ) Opsi <i class="fa fa-chevron-down"></i></a>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="tbody_records">
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- /TABEL -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /page content -->
+
+  <% include partials/footer.ejs %>
+  </div>
+  </div>
+  <% include partials/scripts.ejs %>
+
+  <script src="./js/handleEditPas.js"></script>
+  <script src="./js/tambahPasien.js"></script>
+</body>
+
+</html>
